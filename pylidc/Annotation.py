@@ -1052,7 +1052,7 @@ class Annotation(Base):
                 if not include_contour_points:
                     # Remove the contour points themselves.
                     i, j = (C - bb[:2,0]).T
-                    k = np.ones(C.shape[0], dtype=np.int)*zi
+                    k = np.ones(C.shape[0], dtype=int)*zi
                     mask[i,j,k] = False
 
         # Second, we "turn off" pixels enclosed by exclusion contours.
@@ -1072,7 +1072,7 @@ class Annotation(Base):
 
                 # Remove the contour points themselves.
                 i, j = (C - bb[:2,0]).T
-                k = np.ones(C.shape[0], dtype=np.int)*zi
+                k = np.ones(C.shape[0], dtype=int)*zi
                 mask[i,j,k] = False
 
         return mask
